@@ -1,0 +1,2 @@
+- To run all tests use python -m unittest
+- To run one test file use python -m unittest test/test_file_manager_json.py

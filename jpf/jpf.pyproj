@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>d099b879-9ab5-4b9f-a703-192a7fe059fd</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>jpf.py</StartupFile>
+    <StartupFile>tests\test_file_manager_json.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,9 +22,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="jpf.py" />
+    <Compile Include="structure\setting.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="structure\setting_element.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\test_file_manager_json_pickle.py" />
+    <Compile Include="tests\test_file_manager_json.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="test_files\" />
+    <Folder Include="structure\" />
     <Folder Include="tests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="readme.txt" />
+    <Content Include="test_files\readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

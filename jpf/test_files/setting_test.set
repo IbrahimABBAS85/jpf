@@ -1,0 +1,1 @@
+{"py/object": "structure.setting.Setting", "_Setting__setting_option": {"py/object": "structure.setting_element.SettingElement", "_SettingElement__name": "setting_element_1", "_SettingElement__value": 20, "active": true}, "_Setting__is_instant_saving": true}
