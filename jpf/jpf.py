@@ -17,6 +17,7 @@ class FileManager(object):
         Returns:
             bool representing if the save operation succedded
         """
+
         if method == None and (method != 'json' or method != 'pickle'):
             method = 'json'
         
@@ -53,10 +54,8 @@ class FileManager(object):
                     return True
                 else:
                     counter += 1
-            except Exception as err:
-                if not os.path.isfile(path):
-                    print('File object manager: please check the provided path')
-                print("File object manager: saving file has failed, try n: " + str(counter), err)
+            except Exception as err:                
+                print("Saving file has failed, try n: " + str(counter), err)
                 counter += 1
         return False
 
@@ -73,8 +72,9 @@ class FileManager(object):
         if path == None or path =='':
             return False
 
-        if not os.path.isfile(path):
-            return None
+        if not os.path.exists(path):
+            print('File you are trying to get does not exist!')
+            return False
 
         if method == None and (method != 'json' or method != 'pickle'):
             method = 'json'
@@ -106,6 +106,46 @@ class FileManager(object):
                     else:
                         counter += 1
             except Exception as err:
-                print("File object manager: reading file has failed, try n: " + str(counter), err)
+                print("Reading file has failed, try n: " + str(counter), err)
                 counter += 1
         return None
+
+    @staticmethod
+    def delete(path):
+        """ Delete file
+        Args:
+            path: provide a string path to where the file will be deleted          
+        Returns:
+            bool representing if the delete operation succedded
+        """
+
+        if not os.path.exists(path):
+            print('File you are trying to delete does not exist!')
+            return True
+
+        if not os.path.isfile(path):
+            print('Please check the provided path')
+
+        counter = 0
+        while counter < 5:
+            try:                
+                list_files = os.listdir(Path(path).parent)
+                default_file  = None
+                try:
+                    default_file = next(f for f in list_files if f == Path(path).name)
+                except StopIteration:
+                    pass
+
+                if default_file != None:
+                    os.remove(path)
+                                    
+                if os.path.exists(path):
+                    print('A try to delete the file did not succed')
+                    counter += 1
+                else:
+                    return True               
+                    
+            except Exception as err:                
+                print("Saving file has failed, try number: " + str(counter), err)
+                counter += 1
+        return False
