@@ -28,7 +28,7 @@
     <Compile Include="structure\setting_element.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="tests\test_file_manager_json_pickle.py" />
+    <Compile Include="tests\test_file_manager_pickle.py" />
     <Compile Include="tests\test_file_manager_json.py">
       <SubType>Code</SubType>
     </Compile>

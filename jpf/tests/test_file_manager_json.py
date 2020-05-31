@@ -16,6 +16,9 @@ class Test_File_Manager_Json(unittest.TestCase):
 
     def test_get_file_default_call(self):        
         self.assertIsNotNone(FileManager.get(pytest.fullPath),"File is not Saved")
+        
+    def test_delete_file(self):
+        self.assertIsNotNone(FileManager.delete(pytest.fullPath),"File is not deleted")
     
     def test_save_file_using_json_argument(self):
         setting = self.getSetting()
@@ -25,16 +28,14 @@ class Test_File_Manager_Json(unittest.TestCase):
         setting = self.getSetting()        
         self.assertIsNotNone(FileManager.get(pytest.fullPath, 'json'), "File is not Saved")
     
-    
-    
     def getSetting(self):
         return Setting(SettingElement('setting_element_1', 20, True), True)
 
 def suite():
-    suite = unittest.TestSuite()
-    
+    suite = unittest.TestSuite()    
     suite.addTest(Test_File_Manager_Json('test_save_file_default_call'))
-    suite.addTest(Test_File_Manager_Json('test_get_file_default_call'))    
+    suite.addTest(Test_File_Manager_Json('test_get_file_default_call')) 
+    suite.addTest(Test_File_Manager_Json('test_delete_file'))
     suite.addTest(Test_File_Manager_Json('test_save_file_using_json_argument'))
     suite.addTest(Test_File_Manager_Json('test_get_file_using_json_argument'))
     return suite

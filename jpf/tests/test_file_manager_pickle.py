@@ -12,21 +12,23 @@ class Test_File_Manager_Pickle(unittest.TestCase):
      
     def test_save_file_using_pickle_argument(self):
         setting = self.getSetting()
-        self.assertEqual(FileManager.save(setting, pytest.fullPath, 'pickle'), True, "File is not Saved")       
+        self.assertEqual(FileManager.save(setting, pytest.fullPath, 'pickle'), True, "File is not Saved")
 
     def test_get_file_using_pickle_argument(self):
         setting = self.getSetting()        
         self.assertIsNotNone(FileManager.get(pytest.fullPath, 'pickle'), "File is not Saved")
-    
-    
+
+    def test_delete_file(self):
+        self.assertIsNotNone(FileManager.delete(pytest.fullPath),"File is not deleted")  
     
     def getSetting(self):
         return Setting(SettingElement('setting_element_1', 20, True), True)
 
-def suite():
+def suite():    
     suite = unittest.TestSuite()  
     suite.addTest(Test_File_Manager_Pickle('test_save_file_using_pickle_argument'))
     suite.addTest(Test_File_Manager_Pickle('test_get_file_using_pickle_argument'))
+    suite.addTest(Test_File_Manager_Pickle('test_delete_file'))
     return suite
 
 if __name__ == '__main__':
