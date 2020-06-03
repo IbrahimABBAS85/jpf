@@ -1,1 +1,3 @@
 *.pyc
+*jpf/dist/*
+*/jfp_Manager_pkg_i.abbas85.egg-info/*

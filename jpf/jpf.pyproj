@@ -22,6 +22,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="jpf.py" />
+    <Compile Include="setup.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="structure\setting.py">
       <SubType>Code</SubType>
     </Compile>
@@ -39,6 +42,8 @@
     <Folder Include="tests\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LICENSE" />
+    <Content Include="README.md" />
     <Content Include="readme.txt" />
     <Content Include="test_files\readme.txt" />
   </ItemGroup>
