@@ -4,14 +4,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="jfp-Manager-pkg-i.abbas85",
-    version="0.0.1",
+    name="jpfmanager",
+    version="0.0.3",
     author="Ibrahim Abbas",
     author_email="i.abbas85@gmail.com",
     description="File manager to deal with json and pickle files",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
+    url="https://github.com/IbrahimABBAS85/jpf",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

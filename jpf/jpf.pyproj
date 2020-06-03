@@ -4,7 +4,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>d099b879-9ab5-4b9f-a703-192a7fe059fd</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>tests\test_file_manager_json.py</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,31 +22,30 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="jpf.py" />
-    <Compile Include="setup.py">
+    <Compile Include="jpfmanager\jpf.py" />
+    <Compile Include="jpfmanager\structure\setting.py" />
+    <Compile Include="jpfmanager\structure\setting_element.py" />
+    <Compile Include="jpfmanager\tests\test_file_manager_json.py" />
+    <Compile Include="jpfmanager\tests\test_file_manager_pickle.py" />
+    <Compile Include="jpfmanager\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="structure\setting.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="structure\setting_element.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="tests\test_file_manager_pickle.py" />
-    <Compile Include="tests\test_file_manager_json.py">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="setup.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="test_files\" />
-    <Folder Include="structure\" />
-    <Folder Include="tests\" />
+    <Folder Include="jpfmanager\" />
+    <Folder Include="jpfmanager\structure\" />
+    <Folder Include="jpfmanager\structure\__pycache__\" />
+    <Folder Include="jpfmanager\tests\" />
+    <Folder Include="jpfmanager\test_files\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="jpfmanager\structure\__pycache__\setting.cpython-38.pyc" />
+    <Content Include="jpfmanager\structure\__pycache__\setting_element.cpython-38.pyc" />
+    <Content Include="jpfmanager\test_files\readme.txt" />
     <Content Include="LICENSE" />
     <Content Include="README.md" />
     <Content Include="readme.txt" />
-    <Content Include="test_files\readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
